@@ -1,12 +1,9 @@
-users:list[dict] = [
-    {'name': 'Julia', 'location': 'Płońsk', 'posts': 500, },
-    {'name': 'Emilia', 'location': 'Lublin', 'posts': 400, },
-    {'name': 'Martyna', 'location': 'Ząbki', 'posts': 200, }
-]
+from utils.controller import get_user_info
+from utils.model import users
 
 
-def get_user_info(users_data:list[dict])->None:
-    for user in users_data:
-        print(f'Twój znajomy: {user["name"]} z {user["location"]} opublikował {user["posts"]}')
+def main():
+    get_user_info(users)
 
-get_user_info(users)
+if __name__ == '__main__':
+    main()
